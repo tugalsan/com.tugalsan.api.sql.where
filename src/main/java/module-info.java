@@ -1,6 +1,7 @@
 module com.tugalsan.api.sql.where {
     requires java.sql;
     requires com.tugalsan.api.executable;
+    requires com.tugalsan.api.unsafe;
     requires com.tugalsan.api.log;
     requires com.tugalsan.api.string;
     requires com.tugalsan.api.list;

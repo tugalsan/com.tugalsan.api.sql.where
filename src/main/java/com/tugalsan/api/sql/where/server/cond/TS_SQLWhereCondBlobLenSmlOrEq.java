@@ -2,7 +2,9 @@ package com.tugalsan.api.sql.where.server.cond;
 
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.sql.sanitize.server.*;
+import static com.tugalsan.api.sql.where.server.cond.TS_SQLWhereCondLngEq.d;
 import com.tugalsan.api.string.client.*;
+import com.tugalsan.api.unsafe.client.*;
 import java.sql.*;
 
 public class TS_SQLWhereCondBlobLenSmlOrEq extends TS_SQLWhereCondAbstract {
@@ -23,12 +25,11 @@ public class TS_SQLWhereCondBlobLenSmlOrEq extends TS_SQLWhereCondAbstract {
 
     @Override
     public int fill(PreparedStatement fillStmt, int offset) {
-        try {
+        return TGS_UnSafe.compile(() -> {
             d.ci("fill", "processed", offset, val);
-            fillStmt.setLong(++offset, val);
-            return offset;
-        } catch (SQLException ex) {
-            throw new RuntimeException(TS_SQLWhereCondBlobLenSmlOrEq.class.getSimpleName() + ".fill", ex);
-        }
+            var newOffset = offset + 1;
+            fillStmt.setLong(newOffset, val);
+            return newOffset;
+        });
     }
 }
