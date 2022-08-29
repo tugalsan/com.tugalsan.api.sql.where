@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondStrPre extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrPre.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrPre.class);
 
     public TS_SQLWhereCondStrPre(CharSequence columnName, CharSequence val) {
         super(columnName);

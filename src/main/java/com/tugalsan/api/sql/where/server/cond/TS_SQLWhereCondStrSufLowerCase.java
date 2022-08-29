@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondStrSufLowerCase extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrSufLowerCase.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrSufLowerCase.class);
 
     public TS_SQLWhereCondStrSufLowerCase(CharSequence columnName, CharSequence val) {
         super(columnName);

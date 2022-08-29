@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondStrEmpty extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrEmpty.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrEmpty.class);
 
     public TS_SQLWhereCondStrEmpty(CharSequence columnName) {
         super(columnName.toString());

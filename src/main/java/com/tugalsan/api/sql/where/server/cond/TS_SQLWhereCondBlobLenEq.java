@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondBlobLenEq extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondBlobLenEq.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondBlobLenEq.class);
 
     public TS_SQLWhereCondBlobLenEq(CharSequence columnName, long val) {
         super(columnName);

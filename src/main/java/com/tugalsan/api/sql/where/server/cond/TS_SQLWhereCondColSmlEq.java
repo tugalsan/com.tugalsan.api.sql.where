@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondColSmlEq extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondColSmlEq.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondColSmlEq.class);
 
     public TS_SQLWhereCondColSmlEq(CharSequence columnName, CharSequence columnName2) {
         super(columnName.toString());

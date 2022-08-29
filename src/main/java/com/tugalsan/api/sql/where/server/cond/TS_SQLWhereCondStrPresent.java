@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondStrPresent extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrPresent.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrPresent.class);
 
     public TS_SQLWhereCondStrPresent(CharSequence columnName) {
         super(columnName.toString());

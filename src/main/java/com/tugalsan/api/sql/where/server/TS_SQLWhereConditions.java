@@ -10,7 +10,7 @@ import com.tugalsan.api.sql.where.server.cond.*;
 
 public class TS_SQLWhereConditions {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereConditions.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereConditions.class);
 
     public TS_SQLWhereConditions(boolean operatorIsAnd) {
         this.operatorIsAnd = operatorIsAnd;

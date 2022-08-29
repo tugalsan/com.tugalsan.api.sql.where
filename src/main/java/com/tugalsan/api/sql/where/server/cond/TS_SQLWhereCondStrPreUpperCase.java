@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondStrPreUpperCase extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrPreUpperCase.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondStrPreUpperCase.class);
 
     public TS_SQLWhereCondStrPreUpperCase(CharSequence columnName, CharSequence val) {
         super(columnName);

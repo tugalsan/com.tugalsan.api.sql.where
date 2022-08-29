@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class TS_SQLWhere {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhere.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhere.class);
 
     private TS_SQLWhereGroups group = null;
 

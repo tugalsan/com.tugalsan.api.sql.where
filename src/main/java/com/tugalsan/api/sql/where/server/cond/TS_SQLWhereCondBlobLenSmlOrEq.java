@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondBlobLenSmlOrEq extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondBlobLenSmlOrEq.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondBlobLenSmlOrEq.class);
 
     public TS_SQLWhereCondBlobLenSmlOrEq(CharSequence columnName, long val) {
         super(columnName);

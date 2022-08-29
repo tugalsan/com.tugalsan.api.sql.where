@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondLngEqNot extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondLngEqNot.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondLngEqNot.class);
 
     public TS_SQLWhereCondLngEqNot(CharSequence columnName, long val) {
         super(columnName);

@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondLngEq extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of( TS_SQLWhereCondLngEq.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of( TS_SQLWhereCondLngEq.class);
 
     public TS_SQLWhereCondLngEq(CharSequence columnName, long val) {
         super(columnName);

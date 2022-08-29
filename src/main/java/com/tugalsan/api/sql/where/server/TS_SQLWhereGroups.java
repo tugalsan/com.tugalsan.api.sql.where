@@ -10,7 +10,7 @@ import java.util.stream.*;
 
 public class TS_SQLWhereGroups {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereGroups.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereGroups.class);
 
     public TS_SQLWhereGroups(boolean operatorIsAnd) {
         this.operatorIsAnd = operatorIsAnd;

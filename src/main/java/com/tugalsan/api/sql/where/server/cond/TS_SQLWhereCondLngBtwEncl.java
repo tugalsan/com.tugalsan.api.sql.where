@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class TS_SQLWhereCondLngBtwEncl extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondLngBtwEncl.class.getSimpleName());
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondLngBtwEncl.class);
 
     public TS_SQLWhereCondLngBtwEncl(CharSequence columnName, long min, long max) {
         super(columnName);
