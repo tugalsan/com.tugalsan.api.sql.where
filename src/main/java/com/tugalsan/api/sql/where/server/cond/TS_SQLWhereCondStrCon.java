@@ -24,7 +24,7 @@ public class TS_SQLWhereCondStrCon extends TS_SQLWhereCondAbstract {
 
     @Override
     public int fill(PreparedStatement fillStmt, int offset) {
-        return TGS_UnSafe.compile(() -> {
+        return TGS_UnSafe.call(() -> {
             d.ci("fill", "processed", offset, val);
             var newOffset = offset + 1;
             if (val != null) {

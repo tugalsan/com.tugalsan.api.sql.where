@@ -1,6 +1,6 @@
 package com.tugalsan.api.sql.where.server;
 
-import com.tugalsan.api.executable.client.*;
+import com.tugalsan.api.runnable.client.*;
 import com.tugalsan.api.list.client.*;
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.pack.client.*;
@@ -39,31 +39,31 @@ public class TS_SQLWhereGroups {
         return result;
     }
 
-    public TS_SQLWhereGroups groupsAnd(TGS_ExecutableType1<TS_SQLWhereGroups> groups) {
+    public TS_SQLWhereGroups groupsAnd(TGS_RunnableType1<TS_SQLWhereGroups> groups) {
         var g = new TS_SQLWhereGroups(true);
         TS_SQLWhereGroups.this.groups.add(g);
-        groups.execute(g);
+        groups.run(g);
         return g;
     }
 
-    public TS_SQLWhereGroups groupsOr(TGS_ExecutableType1<TS_SQLWhereGroups> groups) {
+    public TS_SQLWhereGroups groupsOr(TGS_RunnableType1<TS_SQLWhereGroups> groups) {
         var g = new TS_SQLWhereGroups(false);
         TS_SQLWhereGroups.this.groups.add(g);
-        groups.execute(g);
+        groups.run(g);
         return g;
     }
 
-    public TS_SQLWhereConditions conditionsAnd(TGS_ExecutableType1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLWhereConditions conditionsAnd(TGS_RunnableType1<TS_SQLWhereConditions> conditions) {
         var c = new TS_SQLWhereConditions(true);
         TS_SQLWhereGroups.this.conditions.add(c);
-        conditions.execute(c);
+        conditions.run(c);
         return c;
     }
 
-    public TS_SQLWhereConditions conditionsOr(TGS_ExecutableType1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLWhereConditions conditionsOr(TGS_RunnableType1<TS_SQLWhereConditions> conditions) {
         var c = new TS_SQLWhereConditions(false);
         TS_SQLWhereGroups.this.conditions.add(c);
-        conditions.execute(c);
+        conditions.run(c);
         return c;
     }
 

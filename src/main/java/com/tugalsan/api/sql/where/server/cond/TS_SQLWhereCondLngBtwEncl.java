@@ -27,7 +27,7 @@ public class TS_SQLWhereCondLngBtwEncl extends TS_SQLWhereCondAbstract {
 
     @Override
     public int fill(PreparedStatement fillStmt, int offset) {
-        return TGS_UnSafe.compile(() -> {
+        return TGS_UnSafe.call(() -> {
             d.ci("fill", "processed", offset, min, max);
             var newOffset = offset + 1;
             fillStmt.setLong(newOffset, min);
