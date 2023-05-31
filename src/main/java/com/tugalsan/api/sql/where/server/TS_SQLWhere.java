@@ -2,7 +2,7 @@ package com.tugalsan.api.sql.where.server;
 
 import com.tugalsan.api.runnable.client.*;
 import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.pack.client.*;
+import com.tugalsan.api.tuple.client.*;
 import java.sql.*;
 
 public class TS_SQLWhere {
@@ -22,13 +22,13 @@ public class TS_SQLWhere {
     }
 
     public TS_SQLWhereConditions conditionsAnd(TGS_RunnableType1<TS_SQLWhereConditions> conditions) {
-        TGS_Pack1<TS_SQLWhereConditions> pack = new TGS_Pack1();
+        TGS_Tuple1<TS_SQLWhereConditions> pack = new TGS_Tuple1();
         groupsAnd(groups -> pack.value0 = groups.conditionsAnd(conditions));
         return pack.value0;
     }
 
     public TS_SQLWhereConditions conditionsOr(TGS_RunnableType1<TS_SQLWhereConditions> conditions) {
-        TGS_Pack1<TS_SQLWhereConditions> pack = new TGS_Pack1();
+        TGS_Tuple1<TS_SQLWhereConditions> pack = new TGS_Tuple1();
         groupsOr(groups -> pack.value0 = groups.conditionsOr(conditions));
         return pack.value0;
     }

@@ -3,7 +3,7 @@ package com.tugalsan.api.sql.where.server;
 import com.tugalsan.api.runnable.client.*;
 import com.tugalsan.api.list.client.*;
 import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.pack.client.*;
+import com.tugalsan.api.tuple.client.*;
 import java.sql.*;
 import java.util.*;
 import java.util.stream.*;
@@ -138,7 +138,7 @@ public class TS_SQLWhereGroups {
 
     public int fill(PreparedStatement stmt, int offset) {
         d.ci("fill", "processed");
-        TGS_Pack1<Integer> pack = new TGS_Pack1(offset);
+        TGS_Tuple1<Integer> pack = new TGS_Tuple1(offset);
         conditions.stream().forEachOrdered(c -> pack.value0 = c.fill(stmt, pack.value0));
         groups.stream().forEachOrdered(g -> pack.value0 = g.fill(stmt, pack.value0));
         return pack.value0;

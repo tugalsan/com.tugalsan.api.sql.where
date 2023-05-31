@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.stream.*;
 import com.tugalsan.api.list.client.*;
 import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.pack.client.*;
+import com.tugalsan.api.tuple.client.*;
 import com.tugalsan.api.sql.where.server.cond.*;
 
 public class TS_SQLWhereConditions {
@@ -201,7 +201,7 @@ public class TS_SQLWhereConditions {
 
     public int fill(PreparedStatement stmt, int offset) {
         d.ci("fill", "processed");
-        TGS_Pack1<Integer> pack = new TGS_Pack1(offset);
+        TGS_Tuple1<Integer> pack = new TGS_Tuple1(offset);
         conditions.stream().forEachOrdered(c -> pack.value0 = c.fill(stmt, pack.value0));
         return pack.value0;
     }
