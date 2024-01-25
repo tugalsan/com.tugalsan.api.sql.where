@@ -2,7 +2,6 @@ package com.tugalsan.api.sql.where.server.cond;
 
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.sql.sanitize.server.*;
-import static com.tugalsan.api.sql.where.server.cond.TS_SQLWhereCondStrEqUpperCase.d;
 import com.tugalsan.api.string.client.*;
 import com.tugalsan.api.unsafe.client.*;
 import java.sql.*;
