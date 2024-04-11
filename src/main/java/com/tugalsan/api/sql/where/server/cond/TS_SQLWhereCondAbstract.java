@@ -2,6 +2,7 @@ package com.tugalsan.api.sql.where.server.cond;
 
 import java.sql.*;
 import com.tugalsan.api.sql.sanitize.server.*;
+import com.tugalsan.api.union.client.TGS_UnionExcuse;
 
 abstract public class TS_SQLWhereCondAbstract {
 
@@ -11,5 +12,5 @@ abstract public class TS_SQLWhereCondAbstract {
     }
     final public String columnName;
 
-    abstract public int fill(PreparedStatement fillStmt, int offset);
+    abstract public TGS_UnionExcuse<Integer> fill(PreparedStatement fillStmt, int offset);
 }

@@ -3,6 +3,7 @@ package com.tugalsan.api.sql.where.server.cond;
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.sql.sanitize.server.*;
 import com.tugalsan.api.string.client.*;
+import com.tugalsan.api.union.client.TGS_UnionExcuse;
 import java.sql.*;
 
 public class TS_SQLWhereCondColSml extends TS_SQLWhereCondAbstract {
@@ -23,7 +24,7 @@ public class TS_SQLWhereCondColSml extends TS_SQLWhereCondAbstract {
     }
 
     @Override
-    public int fill(PreparedStatement fillStmt, int offset) {
-        return offset;
+    public TGS_UnionExcuse<Integer> fill(PreparedStatement fillStmt, int offset) {
+        return TGS_UnionExcuse.of(offset);
     }
 }

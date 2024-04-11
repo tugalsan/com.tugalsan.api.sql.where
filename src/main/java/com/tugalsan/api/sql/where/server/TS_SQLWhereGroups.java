@@ -3,7 +3,7 @@ package com.tugalsan.api.sql.where.server;
 import com.tugalsan.api.runnable.client.*;
 import com.tugalsan.api.list.client.*;
 import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.tuple.client.*;
+import com.tugalsan.api.union.client.TGS_UnionExcuse;
 import java.sql.*;
 import java.util.*;
 import java.util.stream.*;
@@ -136,12 +136,26 @@ public class TS_SQLWhereGroups {
         return result;
     }
 
-    public int fill(PreparedStatement stmt, int offset) {
+    public TGS_UnionExcuse<Integer> fill(PreparedStatement stmt, int offset) {
         d.ci("fill", "processed");
-        TGS_Tuple1<Integer> pack = new TGS_Tuple1(offset);
-        conditions.stream().forEachOrdered(c -> pack.value0 = c.fill(stmt, pack.value0));
-        groups.stream().forEachOrdered(g -> pack.value0 = g.fill(stmt, pack.value0));
-        return pack.value0;
+        var wrap = new Object() {
+            int nextOffset = offset;
+        };
+        for (var c : conditions) {
+            var u = c.fill(stmt, wrap.nextOffset);
+            if (u.isExcuse()) {
+                return u;
+            }
+            wrap.nextOffset = u.value();
+        }
+        for (var g : groups) {
+            var u = g.fill(stmt, wrap.nextOffset);
+            if (u.isExcuse()) {
+                return u;
+            }
+            wrap.nextOffset = u.value();
+        }
+        return TGS_UnionExcuse.of(wrap.nextOffset);
     }
 
     private void addOperator(StringBuilder sb) {

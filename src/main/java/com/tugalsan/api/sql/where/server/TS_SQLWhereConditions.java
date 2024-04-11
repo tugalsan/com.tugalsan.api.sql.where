@@ -5,8 +5,8 @@ import java.util.*;
 import java.util.stream.*;
 import com.tugalsan.api.list.client.*;
 import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.tuple.client.*;
 import com.tugalsan.api.sql.where.server.cond.*;
+import com.tugalsan.api.union.client.TGS_UnionExcuse;
 
 public class TS_SQLWhereConditions {
 
@@ -199,11 +199,19 @@ public class TS_SQLWhereConditions {
         return sb.append(")").toString();
     }
 
-    public int fill(PreparedStatement stmt, int offset) {
+    public TGS_UnionExcuse<Integer> fill(PreparedStatement stmt, int offset) {
         d.ci("fill", "processed");
-        TGS_Tuple1<Integer> pack = new TGS_Tuple1(offset);
-        conditions.stream().forEachOrdered(c -> pack.value0 = c.fill(stmt, pack.value0));
-        return pack.value0;
+        var wrap = new Object() {
+            int nextOffset = offset;
+        };
+        for (var c : conditions) {
+            var u = c.fill(stmt, wrap.nextOffset);
+            if (u.isExcuse()) {
+                return u;
+            }
+            wrap.nextOffset = u.value();
+        }
+        return TGS_UnionExcuse.of(wrap.nextOffset);
     }
 
     private void addOperator(StringBuilder sb) {
