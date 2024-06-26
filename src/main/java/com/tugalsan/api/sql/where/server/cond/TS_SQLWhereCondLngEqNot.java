@@ -19,7 +19,7 @@ public class TS_SQLWhereCondLngEqNot extends TS_SQLWhereCondAbstract {
     @Override
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
-        return TGS_StringUtils.concat(columnName, " <> ?");
+        return TGS_StringUtils.cmn().concat(columnName, " <> ?");
     }
 
     @Override

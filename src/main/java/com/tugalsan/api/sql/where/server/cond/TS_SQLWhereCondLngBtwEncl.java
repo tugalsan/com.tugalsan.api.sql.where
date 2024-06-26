@@ -22,7 +22,7 @@ public class TS_SQLWhereCondLngBtwEncl extends TS_SQLWhereCondAbstract {
     @Override
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
-        return TGS_StringUtils.concat(columnName, " BETWEEN ? AND ?");
+        return TGS_StringUtils.cmn().concat(columnName, " BETWEEN ? AND ?");
     }
 
     @Override

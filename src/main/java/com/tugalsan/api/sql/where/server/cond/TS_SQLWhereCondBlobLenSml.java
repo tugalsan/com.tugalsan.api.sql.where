@@ -19,7 +19,7 @@ public class TS_SQLWhereCondBlobLenSml extends TS_SQLWhereCondAbstract {
     @Override
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
-        return TGS_StringUtils.concat("LENGTH(", columnName, ") < ?");
+        return TGS_StringUtils.cmn().concat("LENGTH(", columnName, ") < ?");
     }
 
     @Override

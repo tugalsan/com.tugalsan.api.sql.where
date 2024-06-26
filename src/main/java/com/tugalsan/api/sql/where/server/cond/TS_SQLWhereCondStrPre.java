@@ -19,7 +19,7 @@ public class TS_SQLWhereCondStrPre extends TS_SQLWhereCondAbstract {
     @Override
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
-        return TGS_StringUtils.concat(columnName, " LIKE ?");
+        return TGS_StringUtils.cmn().concat(columnName, " LIKE ?");
     }
 
     @Override
@@ -28,9 +28,9 @@ public class TS_SQLWhereCondStrPre extends TS_SQLWhereCondAbstract {
             d.ci("fill", "processed", offset, val);
             var newOffset = offset + 1;
             if (val != null) {
-                fillStmt.setString(newOffset, TGS_StringUtils.concat(val.concat("%")));
+                fillStmt.setString(newOffset, TGS_StringUtils.cmn().concat(val.concat("%")));
             } else {
-                fillStmt.setString(newOffset, TGS_StringUtils.concat("null"));
+                fillStmt.setString(newOffset, TGS_StringUtils.cmn().concat("null"));
             }
             return newOffset;
         });

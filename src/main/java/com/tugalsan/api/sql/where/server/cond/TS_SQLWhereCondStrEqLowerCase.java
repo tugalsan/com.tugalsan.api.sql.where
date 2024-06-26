@@ -19,7 +19,7 @@ public class TS_SQLWhereCondStrEqLowerCase extends TS_SQLWhereCondAbstract {
     @Override
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
-        return TGS_StringUtils.concat("LCASE(", columnName, ") = ?");
+        return TGS_StringUtils.cmn().concat("LCASE(", columnName, ") = ?");
     }
 
     @Override
@@ -28,9 +28,9 @@ public class TS_SQLWhereCondStrEqLowerCase extends TS_SQLWhereCondAbstract {
             d.ci("fill", "processed", offset, val);
             var newOffset = offset + 1;
             if (val != null) {
-                fillStmt.setString(newOffset, TGS_StringUtils.concat(val));
+                fillStmt.setString(newOffset, TGS_StringUtils.cmn().concat(val));
             } else {
-                fillStmt.setString(newOffset, TGS_StringUtils.concat("null"));
+                fillStmt.setString(newOffset, TGS_StringUtils.cmn().concat("null"));
             }
             return newOffset;
         });

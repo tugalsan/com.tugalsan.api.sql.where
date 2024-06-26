@@ -19,7 +19,7 @@ public class TS_SQLWhereCondColEq extends TS_SQLWhereCondAbstract {
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
         TS_SQLSanitizeUtils.sanitize(columnName2);
-        return TGS_StringUtils.concat(columnName, " = ", columnName2);
+        return TGS_StringUtils.cmn().concat(columnName, " = ", columnName2);
     }
 
     @Override
