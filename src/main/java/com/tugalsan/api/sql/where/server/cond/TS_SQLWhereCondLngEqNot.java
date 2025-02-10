@@ -1,9 +1,10 @@
 package com.tugalsan.api.sql.where.server.cond;
 
+import com.tugalsan.api.function.client.maythrow.checkedexceptions.TGS_FuncMTCEUtils;
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.sql.sanitize.server.*;
 import com.tugalsan.api.string.client.*;
-import com.tugalsan.api.unsafe.client.*;
+
 import java.sql.*;
 
 public class TS_SQLWhereCondLngEqNot extends TS_SQLWhereCondAbstract {
@@ -24,7 +25,7 @@ public class TS_SQLWhereCondLngEqNot extends TS_SQLWhereCondAbstract {
 
     @Override
     public int fill(PreparedStatement fillStmt, int offset) {
-        return TGS_UnSafe.call(() -> {
+        return TGS_FuncMTCEUtils.call(() -> {
             d.ci("fill", "processed", offset, val);
             var newOffset = offset + 1;
             fillStmt.setLong(newOffset, val);

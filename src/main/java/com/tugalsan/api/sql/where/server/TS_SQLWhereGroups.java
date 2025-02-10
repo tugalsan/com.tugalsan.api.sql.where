@@ -1,7 +1,7 @@
 package com.tugalsan.api.sql.where.server;
 
 
-import com.tugalsan.api.function.client.TGS_Func_In1;
+import com.tugalsan.api.function.client.maythrow.uncheckedexceptions.TGS_FuncMTUCE_In1;
 import com.tugalsan.api.list.client.*;
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.tuple.client.*;
@@ -40,28 +40,28 @@ public class TS_SQLWhereGroups {
         return result;
     }
 
-    public TS_SQLWhereGroups groupsAnd(TGS_Func_In1<TS_SQLWhereGroups> groups) {
+    public TS_SQLWhereGroups groupsAnd(TGS_FuncMTUCE_In1<TS_SQLWhereGroups> groups) {
         var g = new TS_SQLWhereGroups(true);
         TS_SQLWhereGroups.this.groups.add(g);
         groups.run(g);
         return g;
     }
 
-    public TS_SQLWhereGroups groupsOr(TGS_Func_In1<TS_SQLWhereGroups> groups) {
+    public TS_SQLWhereGroups groupsOr(TGS_FuncMTUCE_In1<TS_SQLWhereGroups> groups) {
         var g = new TS_SQLWhereGroups(false);
         TS_SQLWhereGroups.this.groups.add(g);
         groups.run(g);
         return g;
     }
 
-    public TS_SQLWhereConditions conditionsAnd(TGS_Func_In1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLWhereConditions conditionsAnd(TGS_FuncMTUCE_In1<TS_SQLWhereConditions> conditions) {
         var c = new TS_SQLWhereConditions(true);
         TS_SQLWhereGroups.this.conditions.add(c);
         conditions.run(c);
         return c;
     }
 
-    public TS_SQLWhereConditions conditionsOr(TGS_Func_In1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLWhereConditions conditionsOr(TGS_FuncMTUCE_In1<TS_SQLWhereConditions> conditions) {
         var c = new TS_SQLWhereConditions(false);
         TS_SQLWhereGroups.this.conditions.add(c);
         conditions.run(c);
