@@ -35,8 +35,8 @@ public class TS_SQLWhereGroups {
             d.ci("isEmpty", "groups.isEmpty()", "return false");
             return true;
         }
-        var result = !groups.stream().filter(g -> g.isPresent()).findAny().isPresent();
-        d.ci("isEmpty", "!groups.stream().filter(g -> g.isPresent()).findAny().isPresent()", "return", !groups.stream().filter(g -> g.isPresent()).findAny().isPresent());
+        var result = !groups.stream().anyMatch(g -> g.isPresent());
+        d.ci("isEmpty", "!groups.stream().anyMatch(g -> g.isPresent())", "return", !groups.stream().anyMatch(g -> g.isPresent()));
         return result;
     }
 
