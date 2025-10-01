@@ -1,6 +1,6 @@
 package com.tugalsan.api.sql.where.server;
 
-import com.tugalsan.api.sql.where.server.cond.*;
+import module com.tugalsan.api.sql.where;
 
 public class TS_SQLWhereUtils {
 

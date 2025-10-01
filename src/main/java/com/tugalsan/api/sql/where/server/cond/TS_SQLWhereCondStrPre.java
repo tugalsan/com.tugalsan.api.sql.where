@@ -1,11 +1,10 @@
 package com.tugalsan.api.sql.where.server.cond;
 
-import com.tugalsan.api.function.client.maythrowexceptions.checked.TGS_FuncMTCUtils;
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.sql.sanitize.server.*;
-import com.tugalsan.api.string.client.*;
-
-import java.sql.*;
+import module com.tugalsan.api.function;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.sql.sanitize;
+import module com.tugalsan.api.string;
+import module java.sql;
 
 public class TS_SQLWhereCondStrPre extends TS_SQLWhereCondAbstract {
 
@@ -25,7 +24,7 @@ public class TS_SQLWhereCondStrPre extends TS_SQLWhereCondAbstract {
 
     @Override
     public int fill(PreparedStatement fillStmt, int offset) {
-       return TGS_FuncMTCUtils.call(() -> {
+        return TGS_FuncMTCUtils.call(() -> {
             d.ci("fill", "processed", offset, val);
             var newOffset = offset + 1;
             if (val != null) {

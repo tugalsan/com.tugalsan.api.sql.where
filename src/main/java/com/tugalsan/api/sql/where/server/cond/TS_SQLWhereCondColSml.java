@@ -1,9 +1,9 @@
 package com.tugalsan.api.sql.where.server.cond;
 
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.sql.sanitize.server.*;
-import com.tugalsan.api.string.client.*;
-import java.sql.*;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.sql.sanitize;
+import module com.tugalsan.api.string;
+import module java.sql;
 
 public class TS_SQLWhereCondColSml extends TS_SQLWhereCondAbstract {
 

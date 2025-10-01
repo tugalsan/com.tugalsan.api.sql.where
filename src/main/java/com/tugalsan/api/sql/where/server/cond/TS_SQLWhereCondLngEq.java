@@ -1,15 +1,14 @@
 package com.tugalsan.api.sql.where.server.cond;
 
-import com.tugalsan.api.function.client.maythrowexceptions.checked.TGS_FuncMTCUtils;
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.sql.sanitize.server.*;
-import com.tugalsan.api.string.client.*;
-
-import java.sql.*;
+import module com.tugalsan.api.function;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.sql.sanitize;
+import module com.tugalsan.api.string;
+import module java.sql;
 
 public class TS_SQLWhereCondLngEq extends TS_SQLWhereCondAbstract {
 
-    public final static TS_Log d = TS_Log.of( TS_SQLWhereCondLngEq.class);
+    public final static TS_Log d = TS_Log.of(TS_SQLWhereCondLngEq.class);
 
     public TS_SQLWhereCondLngEq(CharSequence columnName, long val) {
         super(columnName);

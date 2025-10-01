@@ -1,7 +1,7 @@
 package com.tugalsan.api.sql.where.server.cond;
 
-import java.sql.*;
-import com.tugalsan.api.sql.sanitize.server.*;
+import module com.tugalsan.api.sql.sanitize;
+import module java.sql;
 
 abstract public class TS_SQLWhereCondAbstract {
 

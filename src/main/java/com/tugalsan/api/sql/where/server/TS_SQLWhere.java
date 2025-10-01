@@ -1,10 +1,9 @@
 package com.tugalsan.api.sql.where.server;
 
-
-import com.tugalsan.api.function.client.maythrowexceptions.unchecked.TGS_FuncMTU_In1;
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.tuple.client.*;
-import java.sql.*;
+import module com.tugalsan.api.function;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.tuple;
+import module java.sql;
 
 public class TS_SQLWhere {
 
