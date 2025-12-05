@@ -53,15 +53,15 @@ public class TS_SQLWhereGroups {
         return g;
     }
 
-    public TS_SQLWhereConditions conditionsAnd(TGS_FuncMTU_In1<TS_SQLWhereConditions> conditions) {
-        var c = new TS_SQLWhereConditions(true);
+    public TS_SQLWhereConditionsAnd conditionsAnd(TGS_FuncMTU_In1<TS_SQLWhereConditionsAnd> conditions) {
+        var c = new TS_SQLWhereConditionsAnd(true);
         TS_SQLWhereGroups.this.conditions.add(c);
         conditions.run(c);
         return c;
     }
 
-    public TS_SQLWhereConditions conditionsOr(TGS_FuncMTU_In1<TS_SQLWhereConditions> conditions) {
-        var c = new TS_SQLWhereConditions(false);
+    public TS_SQLWhereConditionsOr conditionsOr(TGS_FuncMTU_In1<TS_SQLWhereConditionsOr> conditions) {
+        var c = new TS_SQLWhereConditionsOr(false);
         TS_SQLWhereGroups.this.conditions.add(c);
         conditions.run(c);
         return c;

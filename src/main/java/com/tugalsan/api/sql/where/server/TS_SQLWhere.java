@@ -21,13 +21,13 @@ public class TS_SQLWhere {
         return group.groupsOr(groups);
     }
 
-    public TS_SQLWhereConditions conditionsAnd(TGS_FuncMTU_In1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLWhereConditions conditionsAnd(TGS_FuncMTU_In1<TS_SQLWhereConditionsAnd> conditions) {
         TGS_Tuple1<TS_SQLWhereConditions> pack = new TGS_Tuple1();
         groupsAnd(groups -> pack.value0 = groups.conditionsAnd(conditions));
         return pack.value0;
     }
 
-    public TS_SQLWhereConditions conditionsOr(TGS_FuncMTU_In1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLWhereConditions conditionsOr(TGS_FuncMTU_In1<TS_SQLWhereConditionsOr> conditions) {
         TGS_Tuple1<TS_SQLWhereConditions> pack = new TGS_Tuple1();
         groupsOr(groups -> pack.value0 = groups.conditionsOr(conditions));
         return pack.value0;

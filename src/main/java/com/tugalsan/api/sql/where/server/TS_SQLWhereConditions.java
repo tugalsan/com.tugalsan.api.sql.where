@@ -8,7 +8,7 @@ import module java.sql;
 import java.util.*;
 import java.util.stream.*;
 
-public class TS_SQLWhereConditions {
+public abstract class TS_SQLWhereConditions {
 
     public final static TS_Log d = TS_Log.of(TS_SQLWhereConditions.class);
 
@@ -136,17 +136,6 @@ public class TS_SQLWhereConditions {
 
     public TS_SQLWhereConditions strEq(CharSequence columnName, CharSequence val) {
         conditions.add(new TS_SQLWhereCondStrEq(columnName, val));
-        return this;
-    }
-
-    @Deprecated //It needs to run in OR!
-    public TS_SQLWhereConditions strLike_needsOR(CharSequence columnName, CharSequence val, CharSequence delim) {
-        var _val = val.toString();
-        var _delim = delim.toString();
-        strEq(columnName, val);
-        strCon(columnName, _delim + _val + _delim);
-        strPre(columnName, _val + _delim);
-        strSuf(columnName, _delim + _val);
         return this;
     }
 
