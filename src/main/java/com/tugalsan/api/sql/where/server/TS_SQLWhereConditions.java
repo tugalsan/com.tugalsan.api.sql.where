@@ -139,6 +139,17 @@ public class TS_SQLWhereConditions {
         return this;
     }
 
+    @Deprecated //It needs to run in OR!
+    public TS_SQLWhereConditions strLike_needsOR(CharSequence columnName, CharSequence val, CharSequence delim) {
+        var _val = val.toString();
+        var _delim = delim.toString();
+        strEq(columnName, val);
+        strCon(columnName, _delim + _val + _delim);
+        strPre(columnName, _val + _delim);
+        strSuf(columnName, _delim + _val);
+        return this;
+    }
+
     public TS_SQLWhereConditions strEqNot(CharSequence columnName, CharSequence val) {
         conditions.add(new TS_SQLWhereCondStrEqNot(columnName, val));
         return this;
